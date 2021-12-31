@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 def boxed_print(txt, double=False):
     tl, h, tr, v, bl, br = u"╔═╗║╚╝" if double else u"┌─┐│└┘"
     N = max([len(line) for line in txt.split("\n")])
@@ -38,9 +41,7 @@ def selector(query, *choices):
         return input == "y"
 
 
-boxed_print("Kibbles Weapon builder", double=True)
-
-while True:
+def main_loop():
     wtype = selector("weapon type", "Simple", "Martial (+d2)")
     wprop = selector(
         "weapon property",
@@ -109,3 +110,12 @@ while True:
     print("")
     boxed_print(out)
     print("")
+
+
+if __name__ == "__main__":
+    boxed_print("Kibbles Weapon builder", double=True)
+    while True:
+        try:
+            main_loop()
+        except KeyboardInterrupt:
+            break
