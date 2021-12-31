@@ -18,7 +18,7 @@ def selector(query, *choices):
 
         while True:
             try:
-                id = int(raw_input("Selection [1-%d] " % len(choices)))
+                id = int(input("Selection [1-%d] " % len(choices)))
                 if 0 < id <= len(choices):
                     break
             except ValueError:
@@ -30,15 +30,15 @@ def selector(query, *choices):
     else:
         while True:
             try:
-                input = raw_input("%s [y/n] " % query)[0].lower()
-                if input in "yn":
+                c = input("%s [y/n] " % query)[0].lower()
+                if c in "yn":
                     break
             except IndexError:
                 pass
 
             print("Wrong input.")
 
-        return input == "y"
+        return c == "y"
 
 
 def main_loop():
