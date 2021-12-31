@@ -55,7 +55,7 @@ def main():
     reach = selector("Has reach? (-d2)")
     free_finesse = wtype == 1 and wprop in [1, 2] and not reach
     fines = selector("Has finesse? (%s)" % ("free" if free_finesse else "-d2"))
-    heavy = selector("Is heavy? (+d2)") if wprop == 4 else False
+    heavy = selector("Is heavy? (+d2)") if wprop == 4 and not fines else False
     dtype = selector(
         "weapon damage type", "Slashing", "Piercing", "Bludgeonning"
     )
