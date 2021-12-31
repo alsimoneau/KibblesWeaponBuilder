@@ -1,2 +1,4 @@
 # KibblesWeaponBuilder
-5e - Weapon Builder &amp; Kibbles Not-quite-common Weapons
+
+Method to generate customized weapons for D&D 5th edition.
+Based on the method described by KibblesTasty here - https://www.gmbinder.com/share/-LryJUFU_dWwhVBMfRdb
