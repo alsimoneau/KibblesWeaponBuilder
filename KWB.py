@@ -41,7 +41,7 @@ def selector(query, *choices):
         return c == "y"
 
 
-def main_loop():
+def main():
     wtype = selector("weapon type", "Simple", "Martial (+d2)")
     wprop = selector(
         "weapon property",
@@ -109,13 +109,8 @@ def main_loop():
 
     print("")
     boxed_print(out)
-    print("")
 
 
 if __name__ == "__main__":
     boxed_print("Kibbles Weapon builder", double=True)
-    while True:
-        try:
-            main_loop()
-        except KeyboardInterrupt:
-            break
+    main()
