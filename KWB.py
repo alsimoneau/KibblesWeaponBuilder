@@ -101,11 +101,13 @@ def main():
         props += ["thrown"]
     if heavy:
         props += ["heavy"]
-    propslist = ", ".join(props).capitalize() + "." if props else "None"
+    propslist = ", ".join(sorted(props)).capitalize()
+    propslist = " - " + propslist if props else ""
+
     dmgtype = ["slashing", "piercing", "bludgeonning"][dtype - 1]
     cat = "Simple" if wtype == 1 else "Martial"
     dmg = "%dd%d" % (N, dsize) if dsize else "1"
-    out = "%s weapon - %s %s - %s" % (cat, dmg, dmgtype, propslist)
+    out = "%s weapon - %s %s%s." % (cat, dmg, dmgtype, propslist)
 
     print("")
     boxed_print(out)
